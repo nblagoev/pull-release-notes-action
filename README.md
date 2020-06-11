@@ -44,7 +44,7 @@ jobs:
 
       - name: Generate Changelog
         id: generate_changelog
-        uses: nblagoev/pull-release-notest-action@v1
+        uses: nblagoev/pull-release-notes-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
