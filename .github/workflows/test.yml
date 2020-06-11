@@ -19,5 +19,6 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./
-      with: 
-        milliseconds: 1000
+      with:
+        base-ref: ci/foo
+        head-ref: ci/bar

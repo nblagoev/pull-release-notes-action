@@ -1,10 +1,27 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Pull Release Notes'
+description: 'A GitHub Action to generate a PR changelog between two refs.'
+author: 'Nikolay Blagoev'
+branding:
+  color: gray-dark
+  icon: git-pull-request
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  repository:
+    description: The owner and repository name, in the format <owner>/<repo>.
+    default: ${{ github.repository }}
+    required: false
+  base-ref:
+    description: |
+      The base ref (commit sha, branch or tag).
+      The release notes will be generated for PRs between the base ref and the head ref.
+    required: true
+  head-ref:
+    description: |
+      The head ref (commit sha, branch or tag).
+      The release notes will be generated for PRs between the base ref and the head ref.
+    required: true
+outputs:
+  result:
+    description: The generated release notes, as markdown string.
 runs:
   using: 'node12'
   main: 'dist/index.js'

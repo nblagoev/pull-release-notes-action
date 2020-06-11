@@ -1,19 +1,28 @@
-import * as core from '@actions/core'
-import {wait} from './wait'
+import * as core from "@actions/core"
+import { ReleaseNotes } from "@nblagoev/pull-release-notes"
 
-async function run(): Promise<void> {
-  try {
-    const ms: string = core.getInput('milliseconds')
-    core.debug(`Waiting ${ms} milliseconds ...`)
+process.on("unhandledRejection", handleError)
+main().catch(handleError)
 
-    core.debug(new Date().toTimeString())
-    await wait(parseInt(ms, 10))
-    core.debug(new Date().toTimeString())
+async function main(): Promise<void> {
+    const [owner, repo] = core.getInput("repository", { required: true }).split("/")
+    const baseRef = core.getInput("base-ref", { required: true }).replace("refs/tags/", "")
+    const headRef = core.getInput("head-ref", { required: true }).replace("refs/tags/", "")
 
-    core.setOutput('time', new Date().toTimeString())
-  } catch (error) {
-    core.setFailed(error.message)
-  }
+    const releaseNotes = new ReleaseNotes({
+        owner,
+        repo,
+        fromTag: baseRef,
+        toTag: headRef,
+        formatter: ReleaseNotes.defaultFormatter
+    })
+
+    core.info(`Pulling release notes between base '${baseRef}' and head '${headRef}'`)
+    const result = await releaseNotes.pull()
+    core.setOutput("result", result)
 }
 
-run()
+function handleError(err: any): void {
+    console.error(err)
+    core.setFailed(`Unhandled error: ${err}`)
+}
