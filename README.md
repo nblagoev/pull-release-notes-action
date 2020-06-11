@@ -25,6 +25,7 @@ On every `push` to a tag matching the pattern `v*`, create a draft release with 
 on:
   push:
     tags:
+      - 'v*'
 
 name: Create Release
 
