@@ -462,10 +462,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@nblagoev/pull-release-notes@^1.2.4":
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/@nblagoev/pull-release-notes/-/pull-release-notes-1.2.4.tgz#0b464be1a519c222073c16142f321e05fe221814"
-  integrity sha512-jCxcQZTvVjXPe2yHt/9qwVH4QuYS+3McKXJq5didPZSW0v29CXXObBCiXtOBBQRq103V7cTQuxb2R1G+WwTqyA==
+"@nblagoev/pull-release-notes@^1.2.5":
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/@nblagoev/pull-release-notes/-/pull-release-notes-1.2.5.tgz#496d4b55f2be16e0be2cb49d5f20fa7bc4ec46f6"
+  integrity sha512-/oqtetrUFPsp0lTHp4FW6IbcN19877ud6tr2/FhpYTydT4dtaa5Ahu9cFYPPFRpkSxZTshEvClMATAhdIN2PxQ==
   dependencies:
     "@octokit/rest" "^17.11.0"
     moment "^2.24.0"

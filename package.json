@@ -27,7 +27,7 @@
   ],
   "dependencies": {
     "@actions/core": "^1.2.0",
-    "@nblagoev/pull-release-notes": "^1.2.4"
+    "@nblagoev/pull-release-notes": "^1.2.5"
   },
   "devDependencies": {
     "@types/jest": "^26.0.0",
