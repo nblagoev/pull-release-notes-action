@@ -19,6 +19,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: ./
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         base-ref: ci/foo
         head-ref: ci/bar
