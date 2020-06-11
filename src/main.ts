@@ -19,6 +19,7 @@ async function main(): Promise<void> {
 
     core.info(`Pulling release notes between base '${baseRef}' and head '${headRef}'`)
     const result = await releaseNotes.pull()
+    core.info(`\n\n${result}`)
     core.setOutput("result", result)
 }
 
