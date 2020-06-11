@@ -2,6 +2,8 @@
 
 > A GitHub Action to generate a PR changelog between two refs.
 
+![build-test](https://github.com/nblagoev/pull-release-notes-action/workflows/build-test/badge.svg)
+
 ## Usage
 ### Pre-requisites
 Create a workflow `.yml` file in your `.github/workflows` directory. An [example workflow](#example-workflow---create-a-release) is available below. For more information, reference the GitHub Help Documentation for [Creating a workflow file](https://help.github.com/en/articles/configuring-a-workflow#creating-a-workflow-file).
