@@ -2,11 +2,10 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     extends: [
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint", // Disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript",
-        "prettier" // Make sure this is always the last configuration in the extends array.
+        "plugin:prettier/recommended" // Make sure this is always the last configuration in the extends array.
     ],
     plugins: ["prettier", "@typescript-eslint", "jest", "import"],
     parserOptions: {
